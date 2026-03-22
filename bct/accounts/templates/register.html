@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 420px;
+        margin: auto;
+        padding: 40px 35px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        border-radius: 16px;
+        text-align: center;
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      h2 {
+        margin-bottom: 25px;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 14px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        background: #f9fafc;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #667eea;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+      }
+
+      input[type="file"] {
+        padding: 8px;
+        background: #fff;
+        cursor: pointer;
+      }
+
+      button {
+        width: 100%;
+        padding: 13px;
+        margin-top: 15px;
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        transition: all 0.25s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      }
+
+      button:active {
+        transform: scale(0.97);
+      }
+
+      p {
+        font-size: 14px;
+        margin: 8px 0;
+        color: #e74c3c;
+        background: #fdecea;
+        padding: 8px;
+        border-radius: 6px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+      <h2>Register</h2>
+
+      {% for message in messages %}
+      <p style="color: red">{{ message }}</p>
+      {% endfor %}
+
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          required
+        /><br />
+        <input type="email" name="email" placeholder="Email" required /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        /><br />
+        <input type="file" name="image" /><br />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

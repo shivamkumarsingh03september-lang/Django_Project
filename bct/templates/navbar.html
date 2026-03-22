@@ -1,0 +1,103 @@
+<style>
+  .navbar {
+    background: linear-gradient(135deg, #ff6a00, #ee0979, #00c9ff);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar h2 {
+    color: #ffffff;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .navbar div {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar a {
+    position: relative;
+    color: #ffffff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  /* hover glow + background */
+  .navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  /* animated underline */
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #fff;
+    transition: width 0.3s ease;
+  }
+
+  .navbar a:hover::after {
+    width: 100%;
+  }
+
+  /* animated gradient background */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* responsive */
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navbar div {
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      margin: 10px 10px 0 0;
+    }
+  }
+</style>
+
+<div class="navbar">
+  <h2>GFEC</h2>
+
+  <div>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/login/">Login</a>
+    <a href="/register/">Register</a>
+  </div>
+</div>

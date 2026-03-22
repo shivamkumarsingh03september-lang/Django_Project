@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <title>About</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        background: linear-gradient(135deg, #ff6a00, #ee0979, #00c9ff);
+        background-size: 300% 300%;
+        animation: gradientMove 8s ease infinite;
+        color: white;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        background: linear-gradient(135deg, #ff6a00, #ee0979, #00c9ff);
+        background-size: 300% 300%;
+        animation: gradientMove 8s ease infinite;
+        padding: 14px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+      }
+
+      .navbar h2 {
+        margin: 0;
+      }
+
+      .navbar a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 6px;
+        transition: 0.3s;
+      }
+
+      .navbar a:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* MAIN */
+      .wrapper {
+        padding: 80px 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(12px);
+        padding: 40px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .summary {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #f1f1f1;
+        margin-bottom: 30px;
+      }
+
+      .highlight {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .highlight h3 {
+        margin-bottom: 10px;
+        color: #f1c40f;
+      }
+
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <h2>GFEC</h2>
+      <div>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/login/">Login</a>
+        <a href="/register/">Register</a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="wrapper">
+      <div class="container">
+        <h1>About GFEC</h1>
+
+        <p class="summary">
+          GFEC is a modern platform designed to simplify student life by providing
+          a clean and organized environment for managing academic resources.
+          It focuses on improving productivity, reducing confusion, and helping
+          students stay consistent in their learning journey.
+        </p>
+
+        <div class="highlight">
+          <h3>🚀 Our Goal</h3>
+          <p>
+            The aim of GFEC is to create a single, easy-to-use platform where
+            students can focus more on learning and less on managing scattered
+            resources.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
